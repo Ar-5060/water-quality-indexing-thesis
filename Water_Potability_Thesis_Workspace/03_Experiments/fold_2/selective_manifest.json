@@ -1,0 +1,29 @@
+{
+    "audit_schema_version": 2,
+    "fold": 2,
+    "outer_test_used_for_selection": false,
+    "probability_source": "sigmoid_oof",
+    "decision_threshold": 0.5,
+    "calibration_metrics_are_final_test_results": false,
+    "target_coverages": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+    ],
+    "input_sha256": {
+        "raw_dataset": "904004bde729bfe3d2e195f46343bceead09e32a0eb95bb8184e7e20e029b2bf",
+        "split_manifest": "a10cf0bd9b70ecabb81bd0520c242e81a902723adc9bdbd8f406e14944f4fa86",
+        "calibrated_predictions": "f400040ff5f6cccf2319054eb479953eef2cab4cbe315683f28d28fada299550"
+    },
+    "output_sha256": {
+        "selective_rules": "76e05201b40d57b4698b2fa71030e5e19861ed9236aa46016bd3c24561a16a99",
+        "summary_table": "14e3ddb85647be91d973a0c3537d5fab79aa76a170ca0c0976051ecc4839a09b",
+        "row_level_predictions": "6da1e8f9f08bdaa429d0cc8de2580b0bc9c85d828edbd8d9972940912d005ff3"
+    },
+    "outputs": {
+        "selective_rules": "03_Experiments\\fold_2\\selective_rules.json",
+        "summary_table": "04_Results\\tables\\selective_prediction_fold_2.csv",
+        "row_level_predictions": "04_Results\\tables\\selective_calibration_predictions_fold_2.csv"
+    }
+}

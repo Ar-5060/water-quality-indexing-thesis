@@ -1,0 +1,43 @@
+{
+    "fold": 4,
+    "method": "confidence_based_abstention",
+    "decision_threshold": 0.5,
+    "confidence_definition": "absolute_difference_between_sigmoid_oof_probability and decision_threshold",
+    "probability_method": "sigmoid",
+    "probability_source": "out_of_fold_calibration_predictions",
+    "target_coverages": [
+        0.25,
+        0.5,
+        0.75,
+        1.0
+    ],
+    "cutoffs": {
+        "majority_baseline": {},
+        "logistic_regression": {
+            "0.25": 0.11532261033853908,
+            "0.5": 0.10947965060910975,
+            "0.75": 0.10274814939159799,
+            "1.0": 0.0
+        },
+        "random_forest": {
+            "0.25": 0.2648724864379113,
+            "0.5": 0.17354336458221803,
+            "0.75": 0.08517355350389832,
+            "1.0": 0.0
+        },
+        "mlp": {
+            "0.25": 0.24154227727976801,
+            "0.5": 0.16428402582662943,
+            "0.75": 0.08705744210601002,
+            "1.0": 0.0
+        }
+    },
+    "reference_only_models": [
+        "majority_baseline"
+    ],
+    "tie_policy": "All rows with confidence >= cutoff - 1e-9 are retained. Ties can make actual coverage higher than target coverage.",
+    "outer_test_used_for_selection": false,
+    "calibration_metrics_are_final_test_results": false,
+    "coverage_note": "Target coverage is selected from calibration OOF confidence quantiles. Actual outer-test coverage may differ.",
+    "calibration_prediction_file": "calibrated_predictions_fold_4.csv"
+}

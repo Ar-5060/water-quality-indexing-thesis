@@ -1,0 +1,53 @@
+{
+    "fold": 2,
+    "probability_columns": "*_sigmoid_oof",
+    "positive_class": 1,
+    "positive_class_name": "potable",
+    "negative_class": 0,
+    "negative_class_name": "non_potable",
+    "false_safe_definition": "actual 0 predicted 1",
+    "primary_false_safe_metric": "FP / (FP + TN)",
+    "supplementary_metric": "FP / (TP + FP), reported as unsafe share among declared-potable predictions; not used for threshold selection",
+    "target_false_safe_rate": 0.05,
+    "sensitivity_targets": [
+        0.05,
+        0.1,
+        0.2,
+        0.3
+    ],
+    "familywise_alpha": 0.05,
+    "one_sided_confidence_level": 0.95,
+    "candidate_count_per_model": 202,
+    "ordinary_thresholds": "0.000 to 1.000 in increments of 0.005",
+    "reject_all_threshold": 1.0000000000000002,
+    "bonferroni_alpha_per_candidate": 0.00024752475247524753,
+    "bonferroni_scope": "202 candidate thresholds within each model family; not a simultaneous correction across all four models",
+    "majority_baseline_handling": "Reference-only constant-probability model. No risk-based threshold optimization is performed. Numeric 0.50 values are retained for downstream schema compatibility and must not be interpreted as selected risk-controlled thresholds.",
+    "outer_test_used_for_selection": false,
+    "thresholds": {
+        "majority_baseline": {
+            "empirical": 0.5,
+            "clopper_pearson": 0.5,
+            "bonferroni": 0.5,
+            "fixed_0.50": 0.5
+        },
+        "logistic_regression": {
+            "empirical": 0.42,
+            "clopper_pearson": 0.43,
+            "bonferroni": 0.435,
+            "fixed_0.50": 0.5
+        },
+        "random_forest": {
+            "empirical": 0.58,
+            "clopper_pearson": 0.6,
+            "bonferroni": 0.675,
+            "fixed_0.50": 0.5
+        },
+        "mlp": {
+            "empirical": 0.58,
+            "clopper_pearson": 0.625,
+            "bonferroni": 0.74,
+            "fixed_0.50": 0.5
+        }
+    }
+}

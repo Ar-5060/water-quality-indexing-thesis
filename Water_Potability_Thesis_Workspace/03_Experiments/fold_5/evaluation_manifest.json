@@ -1,0 +1,42 @@
+{
+    "fold": 5,
+    "n_test_rows": 655,
+    "models_retrained": false,
+    "thresholds_reselected": false,
+    "threshold_selection_probability_source": "sigmoid_oof_calibration_predictions",
+    "outer_test_probability_source": "saved_full_calibration_fit_sigmoid_calibrator",
+    "selective_cutoff_selection_probability_source": "sigmoid_oof_calibration_predictions",
+    "reject_all_threshold": 1.0000000000000002,
+    "primary_false_safe_rate": "FP / (FP + TN)",
+    "selective_evaluation_performed": true,
+    "input_sha256": {
+        "raw_dataset": "904004bde729bfe3d2e195f46343bceead09e32a0eb95bb8184e7e20e029b2bf",
+        "water_utils": "83fba96805cea94784b02d338fd45b12d54e6a2bba5ecdfe80c5fee4607d5fc9",
+        "split_manifest": "14b2f6e67fdfe6d5163fd5d4688bccf0eacfd02ec07057c72ccc97c02ec58fcf",
+        "thresholds": "4552557df1525064d306c0115a191ea47865d49dc75ca854ae5a00bea3438206",
+        "model_majority_baseline": "33664e9ce2c1df9c6d674abc7d7482ef0c8bd662235d53f7d9457a5cf191b379",
+        "calibrator_majority_baseline": "13ffb1b0971b518929d8710ab9d02277ba8f438c8580382415818824ea6cdc4a",
+        "model_logistic_regression": "a2ea8b42f68073e0b46d08eab210147bec9ec16a5b87bc425bab3ad7ba70f420",
+        "calibrator_logistic_regression": "416cf985c2597a8d19056531de7db3772a7d92ad35d80a36ae91bfa704efc0b6",
+        "model_random_forest": "19ed41a1c7442b12488c181565c7d1561414ac77f023d84dbfb34755691e4d66",
+        "calibrator_random_forest": "3e24b9f5fcdc0b8f097ffb1cc7202ab571b63cb6f38e1cb3e956bdba6867fc8b",
+        "model_mlp": "a5ee0e5ad9eb5de12debb01c9d82a076711dd1b69b3d052c0c27dd8ec39c79bf",
+        "calibrator_mlp": "c33b274dbed3c1253a95dc8ffc45027d116f7238d0edc3d1cd463a18a0a1a254",
+        "threshold_selection_table": "639e91f1822893e836be60381e9914d211c4759bc8fcbc6b1d44a3c1e816799a",
+        "selective_rules": "2603de49a350294a129aea627ca819cfd24d3667a3edc23f0b1a70fd0d4ec155",
+        "selective_manifest": "97fed77d0f7d4674016433986b45614bc06e468d6b7734accf5e9dc5b379e9da",
+        "calibrated_predictions": "9c324a038ecce118df1897ed3e8c9acae866e28c29debf58169d173ea447e406"
+    },
+    "inputs_unchanged_after_evaluation": true,
+    "outputs": {
+        "predictions": "04_Results\\tables\\test_predictions_fold_5.csv",
+        "probability_metrics": "04_Results\\tables\\evaluation_probability_fold_5.csv",
+        "threshold_metrics": "04_Results\\tables\\evaluation_thresholds_fold_5.csv",
+        "selective_metrics": "04_Results\\tables\\evaluation_selective_fold_5.csv"
+    },
+    "figures": {
+        "confusion_matrices": "04_Results/figures/evaluation_confusion_matrices_fold_5.png",
+        "roc": "04_Results/figures/evaluation_roc_fold_5.png",
+        "reliability": "04_Results/figures/evaluation_reliability_fold_5.png"
+    }
+}
