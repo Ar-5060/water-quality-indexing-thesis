@@ -4,6 +4,10 @@
 
 BSc thesis workspace by **Anisur Rahman**
 
+<p align="center">
+  <img src="06_Documentation/assets/water_wave.svg" alt="Animated water waves" width="100%">
+</p>
+
 ---
 
 **Key findings** (pooled outer test, five folds, n = 3,276)
