@@ -1,4 +1,0 @@
-model,training_rows,test_rows,accuracy,balanced_accuracy,f1_potable,recall_potable,false_safe_count,non_potable_test_count,false_safe_rate,roc_auc,pr_auc_potable
-Majority baseline,2620,656,0.6097560975609756,0.5,0.0,0.0,0,400,0.0,0.5,0.3902439024390244
-Logistic regression,2620,656,0.6097560975609756,0.5,0.0,0.0,0,400,0.0,0.548115234375,0.489955430309229
-Random forest,2620,656,0.6753048780487805,0.61421875,0.44675324675324674,0.3359375,43,400,0.1075,0.6651806640625,0.6010427232974328

@@ -1,9 +1,0 @@
-approach,decision_type,splits,mean_coverage_pct,mean_review_pct,mean_positive_prediction_pct,mean_false_safe_all_negative_pct,mean_potable_recall_all_pct,mean_positive_precision_pct,mean_accepted_error_pct,mean_false_safe_accepted_negative_pct,mean_false_safe_count,mean_true_potable_count
-Fixed 0.50,Binary (always decide),8,100.0,0.0,18.6738,11.0312,30.6152,64.1072,,11.0312,44.125,78.375
-Empirical 5%,Binary (always decide),8,100.0,0.0,11.4901,5.9062,20.2148,69.2706,,5.9062,23.625,51.75
-Uncorrected bound,Binary (always decide),8,100.0,0.0,7.5648,3.1562,14.4531,74.5948,,3.1562,12.625,37.0
-Bonferroni bound,Binary (always decide),8,100.0,0.0,5.4878,2.1875,10.6445,75.901,,2.1875,8.75,27.25
-Abstain 100% target,Selective (can review),8,100.0,0.0,18.6738,11.0312,30.6152,64.1072,33.8034,11.0312,44.125,78.375
-Abstain 75% target,Selective (can review),8,74.1806,25.8194,9.3559,4.3125,17.2363,72.4819,30.1963,5.4902,17.25,44.125
-Abstain 50% target,Selective (can review),8,50.3239,49.6761,5.1067,1.9375,10.0586,76.8365,26.6384,3.4423,7.75,25.75
-Abstain 25% target,Selective (can review),8,25.8575,74.1425,2.1723,0.5625,4.6875,83.9893,23.0516,1.8683,2.25,12.0
