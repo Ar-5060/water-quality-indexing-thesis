@@ -1,0 +1,11 @@
+dataset,check,value,interpretation
+Dhaka WQI,Sample count,1495,Observed CSV rows
+Dhaka WQI,WQI missing,0,No missing target
+Dhaka WQI,Label reproducible from WQI thresholds 50/75,1495/1495,"Perfect match, but publisher formula remains unverified"
+Dhaka WQI,COD equal to 70,1301,Repeated value needs provenance check
+Dhaka WQI,Negative COD,6,Invalid or unusual measurements require source clarification
+Potability Kaggle,Sample count,3276,Observed CSV rows
+Potability Kaggle,Rows missing at least one predictor,1265,Must impute in train fold only
+Potability Kaggle,Missing target,0,No missing potability labels
+Potability Kaggle,Positive potable labels,1278,"Reported label, not confirmed independent lab standard"
+Potability Kaggle,Date/location/lab methodology metadata,Not present in CSV,External or time/location validation impossible from this file
