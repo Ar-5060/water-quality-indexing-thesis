@@ -1,114 +1,116 @@
+<div align="center">
 
-# Water Quality Indexing Using Machine Learning and Deep Learning
+<h1>Evaluating Risk-Aware and Selective Machine Learning<br>for Water Potability Classification</h1>
 
-**Undergraduate Thesis Research | Software Engineering**
+B.Sc. Thesis Research in Software Engineering<br>
+Daffodil International University
 
-## Research Overview
+<br>
 
-This repository contains the materials, datasets, experimental code, and documentation for an undergraduate thesis on water quality assessment and indexing using Machine Learning (ML) and Deep Learning (DL).
+<img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python 3.10+">
+<img src="https://img.shields.io/badge/Research-In%20Progress-orange" alt="Research in progress">
+<img src="https://img.shields.io/badge/Evaluation-5--Fold%20CV-green" alt="5-fold CV">
+<img src="https://img.shields.io/badge/Documentation-Ongoing-blueviolet" alt="Documentation ongoing">
 
-The research aims to explore data-driven methods for evaluating water quality and comparing predictive models.
+</div>
 
-**Research Status:** In Progress  
-**Research Title:** Proposed (Not Finalized)
+<br>
 
-## Research Objectives
+## 1. Research Overview
 
-The proposed objectives are:
+This research investigates **risk-aware and selective machine learning approaches for water potability classification**, with particular attention to reducing false-safe predictions, that is, non-potable water classified as potable.
 
-1. Review existing research on water quality assessment and prediction.
-2. Explore publicly available water quality datasets.
-3. Analyze water quality parameters and their relationships.
-4. Develop baseline Machine Learning models.
-5. Explore suitable Deep Learning models.
-6. Evaluate and compare model performance.
-7. Identify potential research gaps and contributions.
+Rather than relying solely on conventional classification accuracy, the study examines how probability calibration, risk-controlled decision thresholds and selective prediction influence classification errors and decision coverage.
 
-These objectives may change as the research progresses.
+## 2. Research Information
 
-## Dataset
+| | |
+|:--|:--|
+| **Researcher** | Anisur Rahman |
+| **Programme** | B.Sc. in Software Engineering |
+| **Institution** | Daffodil International University |
+| **Supervisor** | Fahad Hossain |
+| **Research Area** | Machine Learning and Water Potability |
+| **Working Title** | *Evaluating Risk-Aware and Selective Machine Learning for Water Potability Classification* |
+| **Status** | Research implementation and thesis documentation in progress |
 
-The repository currently includes:
+## 3. Research Focus
 
-- `Data Set/water_potability.csv`
-- `Data Set/Water quality dhaka.csv`
+- Water potability classification using machine learning
+- Probability calibration and reliability assessment
+- Comparison of fixed and risk-controlled thresholds
+- False-Safe Rate (FSR) analysis
+- Selective prediction with a *Needs Review* option
+- Evaluation of decision coverage, potable recall and review workload
 
-Dataset sources, licenses, features, and target definitions will be documented and verified.
+## 4. Dataset and Models
 
-The final dataset selection has not been confirmed.
+**Dataset.** [Water Potability Dataset](https://www.kaggle.com/datasets/adityakadiwal/water-potability) (Kaggle): 3,276 observations, 9 physicochemical input features and a binary target `Potability` (0 = non-potable, 1 = potable).
 
-## Proposed Methodology
+**Models under investigation.**
 
-The research workflow may include:
+| Model | Role |
+|:--|:--|
+| Logistic Regression | Linear classifier |
+| Random Forest | Tree ensemble |
+| Multi-Layer Perceptron (MLP) | Neural network |
+| Majority Class Baseline | Reference only |
 
-1. Literature Review
-2. Dataset Selection and Verification
-3. Exploratory Data Analysis (EDA)
-4. Data Cleaning and Preprocessing
-5. Feature Analysis and Selection
-6. Machine Learning Model Development
-7. Deep Learning Model Development
-8. Model Evaluation and Comparison
-9. Research Contribution Analysis
-10. Thesis Writing and Final Defense
+## 5. Current Research Progress
 
-The final methodology will depend on the research question and selected dataset.
+| Research Component | Status |
+|:--|:--|
+| Literature review and research preparation | Organized |
+| Dataset exploration and quality assessment | Completed |
+| Data preprocessing pipeline | Implemented |
+| Model training and comparison pipeline | Implemented |
+| Probability calibration | Implemented |
+| Risk-controlled threshold selection | Implemented |
+| Selective prediction | Implemented |
+| Five-fold experiment organization | Prepared |
+| Model evaluation and results analysis | Implemented |
+| Research interpretation and thesis writing | Ongoing |
 
-## Repository Structure
+The experimental outputs are being organized and reviewed. Final interpretation and thesis documentation remain ongoing.
+
+## 6. Repository Structure
 
 ```text
-Thesis Material/
-├── Data Set/
-├── Diagram/
-├── Experimental Code/
-├── Previous Thesis Works/
+water-quality-indexing-thesis/
+├── Literature Review/
+├── Pre Thesis Research Exploration/
 ├── Proposal/
-├── DIU_Thesis Guidelines.pdf
-├── SWE_Thesis Template_2024.pdf
+├── Thesis hand written notes/
+├── Water_Potability_Thesis_Workspace/
+│   ├── 01_Data/
+│   ├── 02_Code/
+│   ├── 03_Experiments/
+│   ├── 04_Results/
+│   ├── 05_Notes/
+│   ├── 06_Documentation/
+│   ├── README.md
+│   ├── requirements.txt
+│   └── .gitignore
 └── README.md
 ```
 
-Additional research documentation and results folders may be added later.
+The full methodology, experimental design and reproduction steps are documented in [`Water_Potability_Thesis_Workspace/README.md`](Water_Potability_Thesis_Workspace/README.md).
 
-## Experimental Work
+## 7. Research and Documentation Status
 
-The `Experimental Code` directory contains research scripts and experiment outputs.
+The computational workflow and experimental workspace have been organized into a structured research environment. Thesis documentation is currently in progress, including methodology documentation, experimental result interpretation, research discussion, limitations and preparation of the final thesis chapters.
 
-Existing experiments will be reviewed before including any results or performance claims in the thesis.
+The repository will continue to be updated as the research and documentation develop.
 
-## Research Progress
+## 8. Research Limitations
 
-| Research Task | Status |
-|---|---|
-| Repository Setup | Completed |
-| Initial Research Material Collection | In Progress |
-| Literature Review | In Progress |
-| Dataset Selection and Verification | Pending |
-| Final Research Question | Pending |
-| ML Model Evaluation | To Be Verified |
-| DL Model Evaluation | Planned |
-| Research Contribution | Pending |
-| Thesis Writing | In Progress |
+- The study uses a publicly available labelled dataset; independent laboratory label provenance has not been established.
+- External validation on an independently labelled dataset remains outstanding.
+- The 5% False-Safe Rate is an experimental target, not a guarantee of future safety.
+- Model predictions must not be interpreted as drinking-water safety certification.
 
-## Research Documentation
+---
 
-The repository will be used to track:
-
-- Research decisions and progress
-- Dataset sources and processing
-- Model development and experiments
-- Evaluation results
-- Diagrams and methodology
-- Thesis documents and revisions
-
-## Academic Note
-
-This repository is maintained for academic research and documentation. All experimental findings must be validated before being reported as final research results.
-
-## Author
-
-**Anisur Rahman**  
-Department of Software Engineering  
-Daffodil International University
-
-**GitHub:** https://github.com/Ar-5060
+<p align="center">
+<sub>Anisur Rahman · B.Sc. in Software Engineering · Daffodil International University</sub>
+</p>
