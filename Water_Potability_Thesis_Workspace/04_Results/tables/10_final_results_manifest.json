@@ -1,0 +1,55 @@
+{
+    "created_utc": "2026-11-23T22:59:48.711129+00:00",
+    "primary_fsr_definition": "FP / (FP + TN)",
+    "target_fsr": 0.05,
+    "models_retrained": false,
+    "thresholds_or_cutoffs_reselected": false,
+    "composite_ranking": false,
+    "reference_only_models": [
+        "majority_baseline"
+    ],
+    "bootstrap": {
+        "n_resamples": 2000,
+        "seed": 42,
+        "stratified_by_class": true
+    },
+    "analysis_script_sha256": "4935c2613f3e1480ecd7fa52fa90e046ee7e60df8bf9f90efa1525d5d5c5a548",
+    "input_sha256": {
+        "01_Data\\raw\\water_potability.csv": "904004bde729bfe3d2e195f46343bceead09e32a0eb95bb8184e7e20e029b2bf",
+        "04_Results\\tables\\evaluation_probability_metrics_pooled.csv": "9ef172b63bce60fdd5c79e67b37becd091edc0fdbd6aeadff3ba02d7d4e90e94",
+        "04_Results\\tables\\evaluation_probability_summary_mean_std.csv": "122753e8b31abaf0ce1990610affb75e33dc5f9b6f9b77b0fda4c37ae4f3c785",
+        "04_Results\\tables\\evaluation_probability_all_folds.csv": "f0ebc807a8af23eaee0dbd4e433423b2f5a108660bc7438da940813dc111c97e",
+        "04_Results\\tables\\evaluation_threshold_metrics_pooled.csv": "14473b4900fa593949f666212a20686927803dde0fb8a35064f38493481f6495",
+        "04_Results\\tables\\evaluation_threshold_summary_mean_std.csv": "9ed4cccf19841b3e30a46237199716d9847add7f93f4523c641a83573bd68347",
+        "04_Results\\tables\\evaluation_thresholds_all_folds.csv": "b480101580d33effb8978fb62e40ad5d20a127ea2dc30881cc8a6da8da1000f1",
+        "04_Results\\tables\\evaluation_selective_metrics_pooled.csv": "3b126418f4897affe73f15e9f054be3836409ceb4766877cfc2519df9beb9fda",
+        "04_Results\\tables\\evaluation_selective_summary_mean_std.csv": "7f0c314c014a618fa3d244d00c53e2af8e8dbda638cb45c377925785cbb9bb17",
+        "04_Results\\tables\\evaluation_selective_all_folds.csv": "209500745e431f9d6d5c03571699159b77e054b77686ca03ad139747ba2c0dd7",
+        "04_Results\\tables\\test_predictions_all_folds.csv": "98dd772184051865ea518402c2e680112ad967f92f25ca1eedfa9a0f35715868"
+    },
+    "output_sha256": {
+        "04_Results\\tables\\10_probability_quality.csv": "50871851e4e2d37020f3f90c009fe48f6856c36d54d985ec92a32b8e69b3dc51",
+        "04_Results\\tables\\10_threshold_comparison.csv": "cfb229313ab65239314632b87d0977c903b25f513593d28e8ff7d128fba81a11",
+        "04_Results\\tables\\10_selective_comparison.csv": "418201f3d0e7806af814b11ea85c7c9d7d1b35d9d354b8dbdbba8586b0ec79ea",
+        "04_Results\\tables\\10_operating_points_meeting_target.csv": "30700d6c90fe039871f108c48943e87c65976a3551146834a7c4a724ea2689c4",
+        "04_Results\\tables\\10_metric_leaders.csv": "19bbcca3997ae6b6342a2374fb774f3f462e95a452c6d8ab958afd5f1f490727",
+        "04_Results\\tables\\10_thesis_ready_model_comparison.csv": "eb796e6d0700a2cb98bbc68145cc856bad80c2835131ccb547eaf275c428e157",
+        "04_Results\\figures\\10_probability_quality.png": "1a39f9e4ed9efc48cf179bc8353b7e7e9096459cdee3491e3a4693ca383265ed",
+        "04_Results\\figures\\10_probability_quality.pdf": "5312b307993c5ea5e1cac7aa4d132895076ed44b3928282cbb0f0e28d8099065",
+        "04_Results\\figures\\10_average_precision.png": "fa89716289421cbf5ed600f7142e3b3879f6f5b6de109c5daf0372b536a08909",
+        "04_Results\\figures\\10_average_precision.pdf": "69954ad35b1cee3f78fa8cab3c9dea94fac7e8116f96a4fa3d5682e54450926c",
+        "04_Results\\figures\\10_threshold_false_safe_vs_recall.png": "b77d79035f9b063efb008e6e105b581fa43e31f8a3355c30b4ddb968467c5e53",
+        "04_Results\\figures\\10_threshold_false_safe_vs_recall.pdf": "f0a6768e37ef4b1bf4a58c3d0c45d6c54e878107b18ce3ba4af92b770d1c679b",
+        "04_Results\\figures\\10_selective_false_safe_vs_recall.png": "fcdaebb815919a5e0cfd6a790129907d37fae5298a5a1da2dc9d8faa806f14a0",
+        "04_Results\\figures\\10_selective_false_safe_vs_recall.pdf": "c9ba6bebb831e50b19fee4799bcb1c69a2c2497bfaaed575a1b9477ae4bd0cec",
+        "04_Results\\figures\\10_selective_risk_vs_coverage.png": "ec35fc9015831c9d973e09d9bc29f159f850aef1507122478c663945c0348afd",
+        "04_Results\\figures\\10_selective_risk_vs_coverage.pdf": "2b1a615696cb99c88a2c875b3267295d17f72200f942728c94163390eb30131b",
+        "04_Results\\figures\\10_selective_actual_vs_target_coverage.png": "b4a867025e4ae5438abd714fd1d17b551799f3046b31390e3daaf6cfe7999881",
+        "04_Results\\figures\\10_selective_actual_vs_target_coverage.pdf": "0ff5392332cac5503a063483ff208f939431699a1837ef7adab9a0ab5e01149b",
+        "04_Results\\figures\\10_false_safe_rate_intervals.png": "105094d514b52b1a4fc3addce3e631a965cd4a56a4afae1b0a38a7c6f90bc2fd",
+        "04_Results\\figures\\10_false_safe_rate_intervals.pdf": "ec245e7d870ccb67e92fd4fbdfc6b8265ca8cceb51b4dc3a0f6a5fa14f07da20",
+        "04_Results\\figures\\10_pooled_roc_and_reliability.png": "acd81699f95c63c497118d618ff230c33d7f21406a359c3dc048e4587907a82b",
+        "04_Results\\figures\\10_pooled_roc_and_reliability.pdf": "0d70f75e1ae2c5f13adf1a487003f651fd0a1b17733390fb4bf8e071a81b99c2",
+        "04_Results\\tables\\10_final_results_report.md": "7668ebf8480775054e2a9c069bfcfdc1f216d12ce473a2dfbe62d7809562cd89"
+    }
+}

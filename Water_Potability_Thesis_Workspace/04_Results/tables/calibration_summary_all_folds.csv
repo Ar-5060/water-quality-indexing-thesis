@@ -1,0 +1,13 @@
+model,method,brier_mean,brier_std,log_loss_mean,log_loss_std,ece_mean,ece_std
+logistic_regression,isotonic,0.24001,0.00093,0.69086,0.01852,0.03009,0.01286
+logistic_regression,sigmoid,0.23831,0.00092,0.66966,0.00189,0.01769,0.01579
+logistic_regression,uncalibrated,0.24451,0.00808,0.68218,0.01626,0.06777,0.04067
+majority_baseline,isotonic,0.23795,0.00011,0.66886,0.00023,0.0,0.0
+majority_baseline,sigmoid,0.23795,0.00011,0.66886,0.00023,1e-05,0.0
+majority_baseline,uncalibrated,0.23795,0.00011,0.66886,0.00023,0.00055,0.00033
+mlp,isotonic,0.21186,0.00665,0.65476,0.03664,0.04845,0.01037
+mlp,sigmoid,0.21051,0.00668,0.61088,0.01491,0.03814,0.01148
+mlp,uncalibrated,0.21068,0.00737,0.61094,0.01539,0.05299,0.00936
+random_forest,isotonic,0.21729,0.00572,0.66791,0.01331,0.04273,0.00872
+random_forest,sigmoid,0.21382,0.00652,0.61827,0.01474,0.03734,0.00833
+random_forest,uncalibrated,0.21702,0.00687,0.62429,0.01461,0.0667,0.02846

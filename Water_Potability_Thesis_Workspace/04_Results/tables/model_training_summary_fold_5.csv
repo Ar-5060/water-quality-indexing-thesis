@@ -1,0 +1,5 @@
+fold,model,inner_cv_metric,inner_cv_best_score,n_candidates,best_params,train_size,calibration_size,fit_seconds
+5,majority_baseline,roc_auc,0.5,1,{},2096,525,0.06
+5,logistic_regression,roc_auc,0.49543,8,"{""model__C"": 0.01, ""model__class_weight"": null}",2096,525,0.3
+5,random_forest,roc_auc,0.65421,24,"{""model__class_weight"": null, ""model__max_depth"": 20, ""model__max_features"": 0.5, ""model__min_samples_leaf"": 1}",2096,525,32.58
+5,mlp,roc_auc,0.67659,18,"{""model__alpha"": 0.01, ""model__hidden_layer_sizes"": [64], ""model__learning_rate_init"": 0.01}",2096,525,3.82

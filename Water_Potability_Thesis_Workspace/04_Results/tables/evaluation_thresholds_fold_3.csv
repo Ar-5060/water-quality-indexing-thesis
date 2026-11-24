@@ -1,0 +1,17 @@
+fold,model,strategy,reference_only,selection_status,selection_feasible,threshold,is_reject_all_threshold,calibration_target_false_safe_rate,tn,fp_false_safe,fn_false_unsafe,tp,n_actual_non_potable,n_actual_potable,n_declared_potable,false_safe_rate,unsafe_share_among_declared_potable,potable_recall,positive_precision,specificity,accuracy,balanced_accuracy,f1_score,safe_prediction_share
+3,majority_baseline,fixed_0.50,True,PREDEFINED_REFERENCE,,0.5,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,majority_baseline,empirical,True,REFERENCE_ONLY_CONSTANT_BASELINE,,0.5,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,majority_baseline,clopper_pearson,True,REFERENCE_ONLY_CONSTANT_BASELINE,,0.5,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,majority_baseline,bonferroni,True,REFERENCE_ONLY_CONSTANT_BASELINE,,0.5,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,logistic_regression,fixed_0.50,False,PREDEFINED_REFERENCE,,0.5,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,logistic_regression,empirical,False,SELECTED,True,0.435,False,0.05,397,3,251,4,400,255,7,0.0075,0.428571,0.015686,0.571429,0.9925,0.612214,0.504093,0.030534,0.010687
+3,logistic_regression,clopper_pearson,False,SELECTED,True,0.445,False,0.05,400,0,254,1,400,255,1,0.0,0.0,0.003922,1.0,1.0,0.612214,0.501961,0.007812,0.001527
+3,logistic_regression,bonferroni,False,SELECTED,True,0.47000000000000003,False,0.05,400,0,255,0,400,255,0,0.0,,0.0,,1.0,0.610687,0.5,0.0,0.0
+3,random_forest,fixed_0.50,False,PREDEFINED_REFERENCE,,0.5,False,0.05,348,52,160,95,400,255,147,0.13,0.353741,0.372549,0.646259,0.87,0.676336,0.621275,0.472637,0.224427
+3,random_forest,empirical,False,SELECTED,True,0.5700000000000001,False,0.05,375,25,190,65,400,255,90,0.0625,0.277778,0.254902,0.722222,0.9375,0.671756,0.596201,0.376812,0.137405
+3,random_forest,clopper_pearson,False,SELECTED,True,0.65,False,0.05,391,9,210,45,400,255,54,0.0225,0.166667,0.176471,0.833333,0.9775,0.665649,0.576985,0.291262,0.082443
+3,random_forest,bonferroni,False,SELECTED,True,0.85,False,0.05,400,0,243,12,400,255,12,0.0,0.0,0.047059,1.0,1.0,0.629008,0.523529,0.089888,0.018321
+3,mlp,fixed_0.50,False,PREDEFINED_REFERENCE,,0.5,False,0.05,348,52,167,88,400,255,140,0.13,0.371429,0.345098,0.628571,0.87,0.665649,0.607549,0.44557,0.21374
+3,mlp,empirical,False,SELECTED,True,0.59,False,0.05,381,19,195,60,400,255,79,0.0475,0.240506,0.235294,0.759494,0.9525,0.673282,0.593897,0.359281,0.120611
+3,mlp,clopper_pearson,False,SELECTED,True,0.715,False,0.05,393,7,227,28,400,255,35,0.0175,0.2,0.109804,0.8,0.9825,0.642748,0.546152,0.193103,0.053435
+3,mlp,bonferroni,False,SELECTED,True,0.835,False,0.05,397,3,240,15,400,255,18,0.0075,0.166667,0.058824,0.833333,0.9925,0.629008,0.525662,0.10989,0.027481

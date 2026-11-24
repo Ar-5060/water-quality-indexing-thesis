@@ -1,0 +1,10 @@
+Feature,Missing,Zero,Negative,Outliers,Lower Bound,Upper Bound
+ph,491,1,0,46,3.14,11.02
+Hardness,0,0,0,83,117.13,276.39
+Solids,0,0,0,47,-1832.42,44831.87
+Chloramines,0,0,0,61,3.15,11.1
+Sulfate,781,0,0,41,229.32,438.33
+Conductivity,0,0,0,11,191.65,655.88
+Organic_carbon,0,0,0,25,5.33,23.3
+Trihalomethanes,162,0,0,33,23.61,109.58
+Turbidity,0,0,0,19,1.85,6.09
