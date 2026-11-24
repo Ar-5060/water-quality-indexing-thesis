@@ -1,4 +1,4 @@
-# Dhaka WQI Exploration — বাংলা পরিচিতি
+# Dhaka WQI Exploration
 
 ## এই research track কেন শুরু হয়েছিল?
 প্রাথমিকভাবে Dhaka-এর water-quality measurement থেকে numeric Water Quality Index (WQI) predict করা সম্ভব কি না তা পরীক্ষা করা হয়েছিল। একই সঙ্গে `Pollution_Label` কীভাবে WQI-এর সঙ্গে সম্পর্কিত, phosphate feature কতটা প্রভাব ফেলে এবং dataset-এর target integrity কেমন—এসব প্রশ্ন দেখা হয়েছিল।

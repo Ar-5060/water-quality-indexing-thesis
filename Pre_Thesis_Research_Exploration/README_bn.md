@@ -46,7 +46,6 @@
 - Potability: 7টি Python script এবং 17টি CSV result।
 - মোট: 10টি Python script, 21টি CSV result।
 
-প্রতিটি script-এর ব্যাখ্যা সংশ্লিষ্ট `docs/code/` folder-এ রয়েছে। Dataset-এর ব্যাখ্যা `docs/datasets/` folder-এ রয়েছে।
 
 ## গুরুত্বপূর্ণ সীমাবদ্ধতা ও যাচাইয়ের নোট
 1. এই folder-এর কাজগুলোকে **Pre-Thesis Exploratory Work** হিসেবে চিহ্নিত করতে হবে।
@@ -56,7 +55,3 @@
 5. কয়েকটি পুরোনো script `/mnt/data/` অথবা নির্দিষ্ট `Water quality.csv` path ব্যবহার করে। নতুন folder structure-এ সরাসরি চালানোর আগে path ঠিক করতে হবে। Original script এখানে অপরিবর্তিত রাখা হয়েছে।
 6. এই folder-এর code-কে পরবর্তী formal thesis pipeline-এর সঙ্গে মিশিয়ে ফেলবে না। Formal pipeline আলাদা থাকবে।
 
-## সংরক্ষণের নিয়ম
-- Original `.py`, `.csv` এবং dataset delete বা overwrite করবে না।
-- Code পরিবর্তন প্রয়োজন হলে original copy রেখে আলাদা revised copy তৈরি করবে।
-- নতুন করে experiment চালালে নতুন output-এর সঙ্গে run date, code version, dataset version ও seed লিখে রাখবে।
