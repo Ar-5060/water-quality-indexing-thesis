@@ -1,4 +1,4 @@
-# Water Potability Exploration — বাংলা পরিচিতি
+# Water Potability Exploration
 
 ## এই research track কেন শুরু হয়েছিল?
 Dhaka WQI direction-এর target provenance অনিশ্চিত থাকায় Kaggle Water Potability dataset নিয়ে binary classification exploration শুরু হয়। এখানে label 0-কে Non-potable এবং label 1-কে Potable হিসেবে ধরা হয়েছে।
