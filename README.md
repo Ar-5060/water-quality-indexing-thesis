@@ -5,6 +5,8 @@
 B.Sc. Thesis Research in Software Engineering<br>
 Daffodil International University
 
+<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/water_wave.svg" alt="Animated water waves" width="100%">
+
 <br>
 
 <img src="https://img.shields.io/badge/Python-3.10%2B-blue" alt="Python 3.10+">
