@@ -380,10 +380,15 @@ Random forest and MLP are practically tied (overlapping intervals). Logistic reg
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/Water_Potability_Thesis_Workspace.git
+git clone https://github.com/Ar-5060/water-quality-indexing-thesis.git
+
+# 2. Go to the repository folder
+cd water-quality-indexing-thesis
+
+# 3. Go to the thesis workspace
 cd Water_Potability_Thesis_Workspace
 
-# 2. Create and activate a virtual environment
+# 4. Create and activate a virtual environment
 python -m venv .venv
 
 # Windows
@@ -391,7 +396,7 @@ python -m venv .venv
 # macOS / Linux
 source .venv/bin/activate
 
-# 3. Install dependencies
+# 5. Install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
