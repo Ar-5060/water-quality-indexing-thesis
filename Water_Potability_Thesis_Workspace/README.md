@@ -6,6 +6,15 @@ BSc thesis workspace by **Anisur Rahman**
 
 ---
 
+**Key findings** (pooled outer test, five folds, n = 3,276)
+
+- At the conventional 0.50 threshold, random forest declares **11.4%** of non-potable samples safe; a Clopper–Pearson threshold lowers this to **2.6%** and meets the 5% target in all five folds.
+- Random forest and MLP reach ROC-AUC **0.685** and **0.684** (overlapping intervals); logistic regression does not rank better than chance (0.485).
+- Abstaining on about 26% of samples keeps FSR under 5% (RF 4.5%, MLP 4.9%) with potable recall of about 21%.
+- Sigmoid calibration reduces random-forest ECE from 0.057 to 0.024 without changing ranking ability.
+
+---
+
 ## Table of contents
 
 1. [Overview](#1-overview)
@@ -148,32 +157,33 @@ Water_Potability_Thesis_Workspace/
 
 ## 5. Methodology
 
-```text
-Raw CSV
-  │
-  ▼
-Exploration & quality checks (01–03)  ──►  report only, no data changed
-  │
-  ▼
-Leakage-safe preprocessing (04)       ──►  pH fix → median imputation → scaling, fitted per fold
-  │
-  ▼
-Model training (05)                   ──►  nested CV, GridSearchCV on ROC-AUC
-  │
-  ▼
-Probability calibration (06)          ──►  sigmoid (main) vs isotonic (comparison)
-  │
-  ▼
-Threshold selection (07)              ──►  fixed 0.50 · empirical · Clopper–Pearson · Bonferroni
-  │
-  ▼
-Selective prediction (08)             ──►  Safe / Unsafe / Needs Review
-  │
-  ▼
-Outer-test evaluation (09)            ──►  untouched folds, SHA-256 verified inputs
-  │
-  ▼
-Final analysis (10)                   ──►  pooled metrics, 95% intervals, thesis tables & figures
+```mermaid
+flowchart TD
+    A["Raw CSV<br/><i>water_potability.csv</i>"]
+    B["<b>01–03 · Exploration and quality checks</b><br/>report only, no data changed"]
+    C["<b>04 · Leakage-safe preprocessing</b><br/>pH fix → median imputation → scaling, fitted per fold"]
+    D["<b>05 · Model training</b><br/>nested CV, GridSearchCV on ROC-AUC"]
+    E["<b>06 · Probability calibration</b><br/>sigmoid (main) vs isotonic (comparison)"]
+    F["<b>07 · Threshold selection</b><br/>fixed 0.50 · empirical · Clopper–Pearson · Bonferroni"]
+    G["<b>08 · Selective prediction</b><br/>Safe / Unsafe / Needs Review"]
+    H["<b>09 · Outer-test evaluation</b><br/>untouched folds, SHA-256 verified inputs"]
+    I["<b>10 · Final analysis</b><br/>pooled metrics, 95% intervals, thesis tables and figures"]
+
+    A --> B --> C --> D --> E
+    E --> F
+    E --> G
+    F --> H
+    G --> H
+    H --> I
+
+    classDef data fill:#f6f8fa,stroke:#57606a,color:#24292f
+    classDef step fill:#ffffff,stroke:#0969da,color:#24292f
+    classDef decision fill:#ffffff,stroke:#1a7f37,color:#24292f
+    classDef eval fill:#ffffff,stroke:#8250df,color:#24292f
+    class A data
+    class B,C,D,E step
+    class F,G decision
+    class H,I eval
 ```
 
 ### 5.1 Preprocessing (leakage-safe)
@@ -190,12 +200,19 @@ All preprocessing lives **inside scikit-learn pipelines**, so every statistic is
 
 Hyperparameters are tuned with `GridSearchCV` (stratified 3-fold inner CV, scoring = ROC-AUC, `random_state = 42`).
 
+<details>
+<summary>Hyperparameter search space</summary>
+
+<br>
+
 | Model | Search space |
 | --- | --- |
 | Majority baseline | `DummyClassifier(strategy="prior")`, reference only, never ranked |
 | Logistic regression | `C ∈ {0.01, 0.1, 1, 10}`, `class_weight ∈ {None, balanced}` |
 | Random forest | 300 trees; `max_depth ∈ {None, 10, 20}`, `min_samples_leaf ∈ {1, 5}`, `max_features ∈ {sqrt, 0.5}`, `class_weight ∈ {None, balanced}` |
 | MLP | `hidden_layer_sizes ∈ {(32,), (64,), (64, 32)}`, `alpha ∈ {1e-4, 1e-3, 1e-2}`, `learning_rate_init ∈ {1e-3, 1e-2}`, early stopping |
+
+</details>
 
 ### 5.3 Probability calibration
 
@@ -242,6 +259,27 @@ If no candidate satisfies a bound-based rule, the conservative reject-all cut-of
 | Inner loop | Stratified 3-fold CV + `GridSearchCV` | Hyperparameter tuning on model-training data only |
 | Calibration CV | Stratified 5-fold inside the calibration subset | OOF probabilities for unbiased threshold selection |
 
+```mermaid
+flowchart LR
+    D["Full dataset<br/>3,276 rows"] --> O{{"Outer stratified 5-fold CV<br/>(repeated for folds 1–5)"}}
+    O --> T["Outer training<br/>≈ 80% of rows"]
+    O --> X["Outer test fold<br/>≈ 20% of rows<br/><i>untouched until step 09</i>"]
+    T --> M["Model-training subset<br/>80% of outer training"]
+    T --> C["Calibration subset<br/>20% of outer training"]
+    M --> I["Inner stratified 3-fold CV<br/>GridSearchCV → fitted model"]
+    C --> K["Calibration 5-fold CV<br/>OOF probabilities → thresholds and selective rules"]
+    I --> E["Evaluation on outer test fold"]
+    K --> E
+    X --> E
+
+    classDef data fill:#f6f8fa,stroke:#57606a,color:#24292f
+    classDef fit fill:#ffffff,stroke:#0969da,color:#24292f
+    classDef test fill:#ffffff,stroke:#cf222e,color:#24292f
+    class D,O data
+    class T,M,C,I,K fit
+    class X,E test
+```
+
 **Safeguards against leakage and silent changes**
 
 - Each outer-test fold is used **once**, only in `09_model_evaluation.py`; no model, threshold or cut-off is changed after seeing test results.
@@ -268,6 +306,15 @@ Random forest and MLP are practically tied (overlapping intervals). Logistic reg
 
 ### 7.2 Threshold strategies (RQ1)
 
+<p align="center">
+  <img src="04_Results/figures/10_threshold_false_safe_vs_recall.png" alt="False-safe rate versus potable recall for each model and threshold strategy" width="620">
+</p>
+
+<details>
+<summary>Threshold results by model and strategy</summary>
+
+<br>
+
 | Model | Strategy | Mean threshold | FSR [95% CI] | Folds meeting 5% | Potable recall |
 | --- | --- | ---: | --- | :---: | ---: |
 | Random forest | Fixed 0.50 | 0.500 | 11.4% [10.1, 12.9] | 1 / 5 | 33.4% |
@@ -279,9 +326,16 @@ Random forest and MLP are practically tied (overlapping intervals). Logistic reg
 | MLP | Clopper–Pearson | 0.651 | 3.4% [2.6, 4.2] | 4 / 5 | 16.1% |
 | MLP | Bonferroni | 0.785 | 0.7% [0.4, 1.2] | 5 / 5 | 7.0% |
 
+</details>
+
 **Finding:** the conventional 0.50 threshold lets about 11–12% of non-potable samples through as safe. Confidence-bound rules bring FSR well under 5% and meet the target in every fold (Clopper–Pearson for RF, Bonferroni for both), at a clear cost in potable recall.
 
 ### 7.3 Selective prediction (RQ2)
+
+<details>
+<summary>Selective prediction results by coverage target</summary>
+
+<br>
 
 | Model | Target coverage | Actual coverage | Review share | FSR [95% CI] | Potable recall (all rows) |
 | --- | ---: | ---: | ---: | --- | ---: |
@@ -293,6 +347,8 @@ Random forest and MLP are practically tied (overlapping intervals). Logistic reg
 | MLP | 50% | 49.7% | 50.3% | 3.0% [2.3, 3.9] | 15.5% |
 | MLP | 75% | 73.8% | 26.2% | 4.9% [4.0, 6.0] | 21.2% |
 | MLP | 100% | 100.0% | 0.0% | 11.9% [10.5, 13.4] | 33.7% |
+
+</details>
 
 **Finding:** abstaining on the least confident ~25% of samples brings pooled FSR under the 5% target for both models while keeping roughly the same recall as the empirical threshold; lower coverage reduces risk further but sends most samples to manual review.
 
