@@ -9,10 +9,10 @@ Department of Software Engineering, Daffodil International University
 
 <br>
 
-<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badges/badge_python.svg" alt="Python 3.10+">
-<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badges/badge_thesis.svg" alt="Thesis submitted November 2026">
-<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badges/badge_evaluation.svg" alt="Nested 5-fold CV">
-<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badges/badge_documentation.svg" alt="Documentation complete">
+<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badge_python.svg" alt="Python 3.10+">
+<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badge_thesis.svg" alt="Thesis submitted November 2026">
+<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badge_evaluation.svg" alt="Nested 5-fold CV">
+<img src="Water_Potability_Thesis_Workspace/06_Documentation/assets/badge_documentation.svg" alt="Documentation complete">
 
 </div>
 
